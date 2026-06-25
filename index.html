@@ -90,9 +90,14 @@
         .sec-st{text-align:center;color:var(--text-dim);font-size:1.04em;margin:0 auto 56px;max-width:580px;line-height:1.7}
 
         /* ── Problem ── */
-        .story{max-width:760px;margin:0 auto}
+        .story{max-width:980px;margin:0 auto}
+        .story-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(260px,0.9fr);gap:36px;align-items:center}
+        .story-copy{max-width:680px}
         .story p{font-size:1.05em;margin-bottom:20px;color:var(--text);line-height:1.8}
         .story strong{color:var(--text-bright);font-weight:700}
+        .story-media{display:flex;justify-content:center}
+        .story-media img{width:100%;max-width:360px;border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:0 10px 30px rgba(0,0,0,.08);object-fit:cover}
+        @media(max-width:800px){.story-layout{grid-template-columns:1fr}.story-media{order:-1;max-width:320px;margin:0 auto 12px}}
 
         /* ── Agitation pain points ── */
         .pain-grid{display:grid;grid-template-columns:1fr;gap:16px;margin:32px 0;max-width:680px;margin-left:auto;margin-right:auto}
@@ -344,10 +349,17 @@
     <!-- ── Intro ── -->
     <section class="sec">
         <div class="story reveal">
-            <p>You did the science. You have the data. <strong>Now, you need to turn it into a published paper.</strong></p>
-            <p>But the path to publication is rarely a straight line. Perhaps you are squeezed for time, anticipating harsh reviewer critiques, or struggling to find the right scientific narrative to frame your work.</p>
-            <p>I know what it feels like to be stuck on a project, and I know the immense pressure of a mounting academic to-do list.</p>
-            <p>That is why I built my editing and consulting practice: to streamline the publication pipeline for researchers and ensure your best work gets the attention it deserves.</p>
+            <div class="story-layout">
+                <div class="story-copy">
+                    <p>You did the science. You have the data. <strong>Now, you need to turn it into a published paper.</strong></p>
+                    <p>But the path to publication is rarely a straight line. Perhaps you are squeezed for time, anticipating harsh reviewer critiques, or struggling to find the right scientific narrative to frame your work.</p>
+                    <p>I know what it feels like to be stuck on a project, and I know the immense pressure of a mounting academic to-do list.</p>
+                    <p>That is why I built my editing and consulting practice: to streamline the publication pipeline for researchers and ensure your best work gets the attention it deserves.</p>
+                </div>
+                <div class="story-media">
+                    <img src="figs/photo_top.png" alt="Chris Akcali" />
+                </div>
+            </div>
         </div>
     </section>
 
