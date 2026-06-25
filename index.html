@@ -369,27 +369,27 @@
     <section class="sec-alt" id="process">
         <div class="wrap">
             <h2 class="sec-t reveal">Getting started is <em>simple.</em></h2>
-            <p class="sec-st reveal">Every engagement begins the same way — a free conversation.</p>
+            <p class="sec-st reveal">Every successful project begins the same way: a free, no-obligation conversation.</p>
             <div class="process reveal">
                 <div class="process-step">
                     <div class="process-num">1</div>
                     <div class="process-body">
                         <h4>Book a free consultation</h4>
-                        <p>Share your project, timeline, and goals. You'll get an honest assessment — no obligation, no pressure.</p>
+                        <p>Share your materials, timeline, and goals. You’ll get an honest assessment of your project’s needs with zero pressure.</p>
                     </div>
                 </div>
                 <div class="process-step">
                     <div class="process-num">2</div>
                     <div class="process-body">
                         <h4>Get a clear proposal</h4>
-                        <p>You'll receive a simple scope document: what gets done, what you receive, and what it costs.</p>
+                        <p>You’ll receive a clear document outlining exactly what will be delivered, when you will receive it, and what it costs. No hidden fees.</p>
                     </div>
                 </div>
                 <div class="process-step">
                     <div class="process-num">3</div>
                     <div class="process-body">
-                        <h4>Your project moves forward</h4>
-                        <p>Work gets delivered on time, with support through submission, peer review, and revision.</p>
+                        <h4>Move your research forward</h4>
+                        <p>Focus on your next project. Work gets delivered on time and ready for submission.</p>
                     </div>
                 </div>
             </div>
@@ -589,22 +589,84 @@
     <!-- ── CTA / Contact ── -->
     <section class="cta-sec" id="contact">
         <div class="reveal">
-            <h2>Getting started is simple.</h2>
-            <p class="cta-lede">Every successful project begins the same way: a free, no-obligation conversation.</p>
+            <h2>Ready to <em>start a conversation?</em></h2>
+            <p class="cta-lede">Tell me a little about your project and I'll get back to you within one business day.</p>
 
-            <div style="max-width:760px;margin:0 auto;text-align:left;display:grid;gap:20px;">
-                <div>
-                    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3em;color:var(--text-bright);margin-bottom:8px;">1. Book a free consultation</h3>
-                    <p style="font-size:1em;color:var(--text);line-height:1.7;">Share your materials, timeline, and goals. You’ll get an honest assessment of your project’s needs with zero pressure.</p>
-                </div>
-                <div>
-                    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3em;color:var(--text-bright);margin-bottom:8px;">2. Get a clear proposal</h3>
-                    <p style="font-size:1em;color:var(--text);line-height:1.7;">You’ll receive a clear document outlining exactly what will be delivered, when you will receive it, and what it costs. No hidden fees.</p>
-                </div>
-                <div>
-                    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3em;color:var(--text-bright);margin-bottom:8px;">3. Move your research forward</h3>
-                    <p style="font-size:1em;color:var(--text);line-height:1.7;">Focus on your next project. Work gets delivered on time and ready for submission.</p>
-                </div>
+            <div class="form-wrap" style="margin-top:48px;text-align:left">
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="fname">First name</label>
+                            <input class="form-input" type="text" id="fname" name="first_name" placeholder="Your first name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="lname">Last name</label>
+                            <input class="form-input" type="text" id="lname" name="last_name" placeholder="Your last name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email</label>
+                        <input class="form-input" type="email" id="email" name="email" placeholder="you@university.edu" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="referral">How did you hear about my services?</label>
+                        <input class="form-input" type="text" id="referral" name="referral" placeholder="e.g. colleague, search, social media">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">What kind of support are you looking for?</label>
+                        <div class="form-checks">
+                            <label class="form-check">
+                                <input type="checkbox" name="support[]" value="Manuscript Editing">
+                                Manuscript Editing
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="support[]" value="Dissertation or Thesis">
+                                Dissertation or Thesis
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="support[]" value="Book or Book Chapter">
+                                Book or Book Chapter
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="support[]" value="Indexing">
+                                Indexing
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="support[]" value="Advisory Session">
+                                Advisory Session (presentation, job talk, interview prep, etc.)
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="support[]" value="Ongoing Support">
+                                Ongoing Support
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="support[]" value="Other">
+                                Other / Not sure yet
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="message">Tell me about your project</label>
+                        <textarea class="form-textarea" id="message" name="message" placeholder="What are you working on? What's your timeline? Anything else I should know?"></textarea>
+                    </div>
+                    <button type="submit" class="form-submit"><i data-lucide="send"></i> Send Message</button>
+
+                </form>
+            </div>
+
+            <div class="contact-row" style="margin-top:48px">
+                <a href="mailto:chrisakcali@yahoo.com" class="contact-chip">
+                    <i data-lucide="mail"></i><span class="lbl">Email</span>chrisakcali@yahoo.com
+                </a>
+                <a href="https://www.linkedin.com/in/chris-akcali-ph-d-201676310/" target="_blank" rel="noopener" class="contact-chip">
+                    <i data-lucide="linkedin"></i><span class="lbl">LinkedIn</span>Chris Akcali, PhD
+                </a>
+                <span class="contact-chip" style="cursor:default">
+                    <i data-lucide="message-circle"></i><span class="lbl">WhatsApp</span>Available on request
+                </span>
+                <span class="contact-chip" style="cursor:default">
+                    <i data-lucide="qr-code"></i><span class="lbl">WeChat</span>Available on request
+                </span>
             </div>
         </div>
     </section>
