@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Chris Akcali — PhD-level scientific editing and consulting. Publication strategy, manuscript development, and research narrative design." />
+    <title>Chris Akcali | Scientific Editing &amp; Consulting</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23faf9f6'/%3E%3Cline x1='32' y1='8' x2='14' y2='56' stroke='%232c5f4a' stroke-width='2.2' stroke-linecap='round'/%3E%3Cline x1='32' y1='8' x2='50' y2='56' stroke='%232c5f4a' stroke-width='2.2' stroke-linecap='round'/%3E%3Cline x1='32' y1='8' x2='32' y2='30' stroke='%232c5f4a' stroke-width='1.8'/%3E%3Ccircle cx='32' cy='8' r='2.5' fill='%232c5f4a'/%3E%3Ccircle cx='32' cy='28' r='2' fill='%232c5f4a'/%3E%3Cpath d='M28 20 Q32 24 36 20' stroke='%232c5f4a' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3Cpath d='M20 44 Q32 38 44 44' stroke='%232c5f4a' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --bg:#faf9f6;--bg-warm:#f0ece4;--bg-deep:#e8e3d9;--bg-card:#fff;
+            --border:#ddd8ce;--border-soft:#ebe7df;
+            --text:#3d3a36;--text-dim:#8a847a;--text-bright:#1c1a17;
+            --accent:#2c5f4a;--accent-dark:#1a3d2f;--accent-light:#3a7d62;--accent-glow:rgba(44,95,74,.07);
+            --gold:#b8941e;--gold-dim:rgba(184,148,30,.10);
+            --radius:18px;--radius-lg:24px;
+        }
+        html{scroll-behavior:smooth}
+        body{background:var(--bg);color:var(--text);font-family:'Nunito Sans',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+        [id]{scroll-margin-top:72px}
+        a{color:var(--accent);text-decoration:none;transition:color .2s}
+        a:hover{color:var(--accent-dark)}
+        h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif}
+        .wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+
+        /* ── Scroll reveal ── */
+        .reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease}
+        .reveal.visible{opacity:1;transform:translateY(0)}
+
+        /* ── Nav ── */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,249,246,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;gap:6px}
+        .nav-brand{display:flex;align-items:center;gap:10px;margin-right:auto;padding:12px 0;color:var(--accent);text-decoration:none;transition:opacity .2s}
+        .nav-brand:hover{color:var(--accent);opacity:.82}
+        .nav-nib{width:24px;height:34px;flex-shrink:0}
+        .nav-brand-stack{display:flex;flex-direction:column;line-height:1}
+        .nav-brand-name{font-family:'Cormorant Garamond',serif;font-size:1.45em;font-weight:700;color:var(--accent);line-height:1.1}
+        .nav-brand-tag{font-family:'Cormorant Garamond',serif;font-size:1.25em;font-weight:600;font-style:italic;color:var(--accent);opacity:.7;margin-top:2px;letter-spacing:0;text-transform:none}
+        .nav a.nl{font-size:.76em;color:var(--text-dim);padding:18px 14px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;border-bottom:2px solid transparent;transition:all .2s}
+        .nav a.nl:hover{color:var(--text-bright);border-bottom-color:var(--accent)}
+        .nav .cta-nav{margin-left:12px;padding:8px 20px;background:var(--accent);color:#fff;border-radius:10px;font-size:.76em;font-weight:700;text-transform:uppercase;letter-spacing:.04em;transition:all .2s}
+        .nav .cta-nav:hover{background:var(--accent-dark);color:#fff;transform:translateY(-1px)}
+
+        /* ── Hero ── */
+        .hero{padding:180px 40px 120px;text-align:center;position:relative;overflow:hidden;min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
+        .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 15% 40%,rgba(44,95,74,.06),transparent 55%),radial-gradient(ellipse at 85% 25%,rgba(184,148,30,.06),transparent 50%),radial-gradient(ellipse at 50% 90%,rgba(44,95,74,.04),transparent 40%);pointer-events:none}
+        /* Decorative botanical SVGs */
+        .hero-deco{position:absolute;pointer-events:none;opacity:.08;color:var(--accent)}
+        .hero-deco-1{top:12%;left:4%;width:140px;height:140px;transform:rotate(-15deg);animation:sway 8s ease-in-out infinite}
+        .hero-deco-2{bottom:8%;right:5%;width:120px;height:120px;transform:rotate(20deg);animation:sway 10s ease-in-out infinite reverse}
+        .hero-deco-3{top:25%;right:12%;width:80px;height:80px;opacity:.05;animation:sway 12s ease-in-out infinite}
+        @keyframes sway{0%,100%{transform:rotate(-15deg) translateY(0)}50%{transform:rotate(-12deg) translateY(-8px)}}
+
+        .hero-trust{display:inline-flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:40px;padding:6px 18px 6px 8px;font-size:.78em;font-weight:600;color:var(--text-dim);margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04);opacity:0;animation:fu .7s ease forwards}
+        .hero-trust-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;animation:pulse 2s infinite}
+        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+        .hero-trust strong{color:var(--accent);font-weight:700}
+
+        .hero h1{font-size:clamp(2.6em,5.5vw,4.4em);font-weight:700;color:var(--text-bright);line-height:1.06;letter-spacing:-.03em;margin-bottom:26px;position:relative;z-index:1;opacity:0;animation:fu .7s ease .05s forwards}
+        .hero h1 em{color:var(--accent);font-style:italic;font-weight:500}
+        .hero-sub{font-size:1.15em;color:var(--text-dim);max-width:600px;margin:0 auto 44px;line-height:1.75;position:relative;z-index:1;opacity:0;animation:fu .7s ease .15s forwards}
+        .hero-cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;opacity:0;animation:fu .7s ease .25s forwards}
+        .btn-primary,.btn-secondary{display:inline-flex;align-items:center;gap:10px;padding:15px 34px;border-radius:12px;font-size:.95em;font-weight:700;transition:all .25s;font-family:'Nunito Sans',sans-serif;cursor:pointer;border:none}
+        .btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 24px rgba(44,95,74,.25)}
+        .btn-primary:hover{background:var(--accent-dark);color:#fff;transform:translateY(-3px);box-shadow:0 10px 32px rgba(44,95,74,.3)}
+        .btn-secondary{background:transparent;color:var(--accent);border:1.5px solid var(--accent)}
+        .btn-secondary:hover{background:var(--accent-glow);color:var(--accent-dark);transform:translateY(-3px)}
+        .btn-primary i,.btn-secondary i{width:18px;height:18px}
+
+        /* Floating social proof card */
+        .hero-float{position:absolute;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:16px 20px;box-shadow:0 8px 32px rgba(0,0,0,.08);max-width:220px;opacity:0;animation:floatIn 1s ease .6s forwards}
+        .hero-float-1{bottom:18%;left:6%;transform:rotate(-3deg)}
+        .hero-float-2{top:22%;right:6%;transform:rotate(2deg)}
+        .hero-float q{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95em;color:var(--text);line-height:1.45;display:block;margin-bottom:8px}
+        .hero-float .hf-attr{font-size:.7em;color:var(--text-dim);font-weight:600}
+        @keyframes floatIn{from{opacity:0;transform:translateY(16px) rotate(-3deg)}to{opacity:1;transform:translateY(0) rotate(-3deg)}}
+        @keyframes fu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+        /* ── Sections ── */
+        .sec{padding:100px 32px}
+        .sec-alt{padding:100px 32px;background:var(--bg-warm)}
+        .sec-deep{padding:100px 32px;background:var(--accent);color:#fff}
+        .sec-t{font-size:clamp(1.9em,3.5vw,2.6em);font-weight:700;color:var(--text-bright);text-align:center;margin-bottom:48px;line-height:1.12}
+        .sec-t:has(+.sec-st){margin-bottom:14px}
+        .sec-t em{color:var(--accent);font-style:italic;font-weight:500}
+        .sec-st{text-align:center;color:var(--text-dim);font-size:1.04em;margin:0 auto 56px;max-width:580px;line-height:1.7}
+
+        /* ── Problem ── */
+        .story{max-width:760px;margin:0 auto}
+        .story p{font-size:1.05em;margin-bottom:20px;color:var(--text);line-height:1.8}
+        .story strong{color:var(--text-bright);font-weight:700}
+
+        /* ── Agitation pain points ── */
+        .pain-grid{display:grid;grid-template-columns:1fr;gap:16px;margin:32px 0;max-width:680px;margin-left:auto;margin-right:auto}
+        .pain-card{display:flex;align-items:flex-start;gap:18px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px 26px;transition:all .3s}
+        .pain-card:hover{border-color:var(--accent);box-shadow:0 6px 24px rgba(0,0,0,.06);transform:translateY(-2px)}
+        .pain-icon{width:36px;height:36px;border-radius:50%;background:rgba(194,57,42,.08);color:#c2392a;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+        .pain-icon i{width:16px;height:16px}
+        .pain-card p{font-size:.94em;color:var(--text);line-height:1.6;margin:0}
+        .story-cta{font-family:'Cormorant Garamond',serif;font-size:1.35em;font-style:italic;color:var(--accent);font-weight:600;line-height:1.45;margin-top:8px}
+
+        /* ── Solution ── */
+        .solution-text{max-width:760px;margin:0 auto}
+        .solution-text p{font-size:1.05em;color:var(--text);line-height:1.8;margin-bottom:20px}
+        .solution-text p:last-child{margin-bottom:0}
+
+        /* ── Marquee ── */
+        .marquee-label{text-align:center;font-size:.75em;text-transform:uppercase;letter-spacing:.18em;font-weight:700;color:rgba(255,255,255,.95);padding:18px 0 0;background:var(--accent)}
+        .marquee-wrap{overflow:hidden;padding:20px 0 28px;background:var(--accent);position:relative}
+        .marquee-track{display:flex;gap:40px;animation:scroll 30s linear infinite;width:max-content}
+        .marquee-track span{font-family:'Cormorant Garamond',serif;font-size:1.15em;font-style:italic;color:rgba(255,255,255,.85);white-space:nowrap;font-weight:500}
+        .marquee-track .dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);flex-shrink:0;align-self:center}
+        @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+        /* ── Stats ── */
+        .stats{display:flex;justify-content:center;gap:60px;flex-wrap:wrap;padding:60px 32px;max-width:800px;margin:0 auto}
+        .stat{text-align:center}
+        .stat-num{font-family:'Cormorant Garamond',serif;font-size:3.2em;font-weight:700;color:var(--accent);line-height:1}
+        .stat-label{font-size:.78em;text-transform:uppercase;letter-spacing:.14em;font-weight:600;color:var(--text-dim);margin-top:8px}
+
+        /* ── Tiers ── */
+        .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1080px;margin:0 auto}
+        @media(max-width:900px){.tiers{grid-template-columns:1fr;max-width:520px}}
+        .tier{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px 32px 36px;position:relative;overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
+        .tier::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--gold));opacity:0;transition:opacity .3s}
+        .tier:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.08)}
+        .tier:hover::before{opacity:1}
+        .tier-label{display:inline-block;font-size:.65em;text-transform:uppercase;letter-spacing:.16em;font-weight:700;color:var(--gold);background:var(--gold-dim);padding:5px 14px;border-radius:8px;margin-bottom:20px;align-self:flex-start}
+        .tier-ic{width:52px;height:52px;border-radius:14px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--accent)}
+        .tier-ic i{width:24px;height:24px}
+        .tier h3{font-size:1.5em;color:var(--text-bright);margin-bottom:6px;font-weight:700}
+        .tier-focus{font-size:.82em;font-style:italic;color:var(--accent);line-height:1.55;margin-bottom:14px;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:.95em}
+        .tier>p{font-size:.92em;color:var(--text-dim);line-height:1.65;margin-bottom:24px}
+        .tier-divider{width:100%;height:1px;background:var(--border-soft);margin:0 0 20px}
+        .tier-detail-label{font-size:.68em;text-transform:uppercase;letter-spacing:.13em;font-weight:700;color:var(--accent);margin-bottom:12px}
+        .tier-list{list-style:none;padding:0;margin:0 0 20px}
+        .tier-list li{display:flex;align-items:flex-start;gap:10px;font-size:.88em;color:var(--text);line-height:1.55;padding:6px 0}
+        .tier-list li .chk{width:20px;height:20px;border-radius:50%;background:var(--accent-glow);color:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+        .tier-list li .chk i{width:12px;height:12px;stroke-width:3}
+        .tier-list li strong{color:var(--text-bright);font-weight:700;display:block;margin-bottom:1px}
+        .tier-list li .desc{display:block;color:var(--text-dim);font-size:.92em;line-height:1.5}
+        .tier-ideal{font-size:.84em;color:var(--text-dim);line-height:1.55;margin-top:auto;padding-top:16px;border-top:1px solid var(--border-soft)}
+        .tier-ideal strong{color:var(--text-bright)}
+
+        /* ── Process ── */
+        .process{max-width:700px;margin:0 auto}
+        .process-step{display:flex;gap:24px;margin-bottom:28px;align-items:flex-start}
+        .process-num{font-family:'Cormorant Garamond',serif;font-size:2.2em;font-weight:700;color:var(--accent);opacity:.25;line-height:1;flex-shrink:0;width:44px;text-align:right;padding-top:2px}
+        .process-body h4{font-family:'Cormorant Garamond',serif;font-size:1.3em;font-weight:700;color:var(--text-bright);margin-bottom:4px}
+        .process-body p{font-size:.94em;color:var(--text-dim);line-height:1.65}
+
+        /* ── Why Me ── */
+        .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+        .why-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px 28px;text-align:center;transition:all .3s}
+        .why-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.07)}
+        .why-card .ic{width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,var(--accent-glow),var(--gold-dim));border:1px solid var(--border-soft);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:var(--accent)}
+        .why-card .ic svg{width:30px;height:30px}
+        .why-card h4{font-size:1.4em;color:var(--text-bright);margin-bottom:10px;font-weight:700}
+        .why-card p{font-size:.9em;color:var(--text-dim);line-height:1.6}
+        @media(max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:560px){.why-grid{grid-template-columns:1fr}}
+
+        /* ── Testimonial ── */
+        .testi-wrap{max-width:720px;margin:0 auto}
+        .testi{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:44px 48px;position:relative;box-shadow:0 4px 20px rgba(0,0,0,.04)}
+        .testi::before{content:'\201C';position:absolute;top:12px;left:28px;font-family:'Cormorant Garamond',serif;font-size:6em;color:var(--gold);opacity:.2;line-height:1;font-style:italic}
+        .testi-quote{font-family:'Cormorant Garamond',serif;font-size:1.22em;font-style:italic;line-height:1.6;color:var(--text);margin-bottom:24px;position:relative;z-index:1}
+        .testi-attr{display:flex;align-items:center;gap:14px;padding-top:20px;border-top:1px solid var(--border-soft)}
+        .testi-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1em;flex-shrink:0;font-family:'Cormorant Garamond',serif}
+        .testi-name{font-weight:700;color:var(--text-bright);font-size:.95em}
+        .testi-role{font-size:.82em;color:var(--text-dim)}
+
+        /* ── About ── */
+        .about{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center;max-width:980px;margin:0 auto}
+        .about-portrait{aspect-ratio:4/5;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);position:relative;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.07)}
+        .about-portrait img{width:100%;height:100%;object-fit:cover;display:block}
+        .about-portrait .placeholder{width:100%;height:100%;background:linear-gradient(135deg,var(--accent-glow) 0%,var(--gold-dim) 100%);display:flex;align-items:center;justify-content:center;color:var(--accent);font-family:'Cormorant Garamond',serif;font-size:1.4em;font-style:italic}
+        .about .role{font-size:.75em;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);font-weight:700;margin-bottom:10px}
+        .about h3{font-size:2.2em;color:var(--text-bright);margin-bottom:20px;line-height:1.1}
+        .about h3 em{color:var(--accent);font-style:italic;font-weight:500}
+        .about p{font-size:1em;color:var(--text);line-height:1.8;margin-bottom:16px}
+        @media(max-width:860px){.about{grid-template-columns:1fr;gap:36px;max-width:480px}.about-portrait{max-width:300px;margin:0 auto}}
+
+        /* ── CTA ── */
+        .cta-sec{text-align:center;padding:120px 40px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 80%,rgba(44,95,74,.08),transparent 60%),var(--bg)}
+        .cta-sec h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2em,4vw,2.8em);color:var(--text-bright);margin-bottom:14px;line-height:1.12}
+        .cta-sec h2 em{color:var(--accent);font-style:italic;font-weight:500}
+        .cta-sec .cta-lede{color:var(--text-dim);margin:0 auto 40px;max-width:500px;font-size:1.06em;line-height:1.7}
+        .contact-row{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:36px}
+        .contact-chip{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;color:var(--text);font-size:.92em;font-weight:600;transition:all .25s}
+        .contact-chip:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.06)}
+        .contact-chip i{width:18px;height:18px;color:var(--accent)}
+        .contact-chip .lbl{color:var(--text-dim);font-size:.75em;text-transform:uppercase;letter-spacing:.1em;margin-right:4px}
+
+        /* Floating badges like Atlantic Editorial */
+        .cta-badges{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:44px}
+        .cta-badge{display:inline-block;padding:8px 18px;background:var(--accent);color:#fff;border-radius:40px;font-size:.78em;font-weight:700;letter-spacing:.03em;animation:float-badge 3s ease-in-out infinite}
+        .cta-badge:nth-child(2){animation-delay:.5s;background:var(--accent-light)}
+        .cta-badge:nth-child(3){animation-delay:1s}
+        .cta-badge:nth-child(4){animation-delay:1.5s;background:var(--accent-light)}
+        @keyframes float-badge{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+        /* ── FAQ ── */
+        .faq-list{max-width:740px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+        .faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color .25s}
+        .faq-item:hover{border-color:var(--accent)}
+        .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;background:none;border:none;cursor:pointer;font-family:'Nunito Sans',sans-serif;font-size:.95em;font-weight:700;color:var(--text-bright);text-align:left;line-height:1.4;transition:color .2s}
+        .faq-q:hover{color:var(--accent)}
+        .faq-q .faq-icon{width:20px;height:20px;flex-shrink:0;color:var(--accent);transition:transform .3s}
+        .faq-item.open .faq-q .faq-icon{transform:rotate(45deg)}
+        .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease}
+        .faq-item.open .faq-a{max-height:300px}
+        .faq-a-inner{padding:0 24px 22px;font-size:.92em;color:var(--text-dim);line-height:1.7}
+
+        /* ── Contact Form ── */
+        .form-wrap{max-width:640px;margin:0 auto}
+        .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+        @media(max-width:560px){.form-row{grid-template-columns:1fr}}
+        .form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+        .form-group:last-child{margin-bottom:0}
+        .form-label{font-size:.82em;font-weight:700;color:var(--text-bright);letter-spacing:.02em}
+        .form-input,.form-textarea,.form-select{
+            width:100%;padding:14px 18px;border:1px solid var(--border);border-radius:12px;
+            background:var(--bg-card);color:var(--text);font-family:'Nunito Sans',sans-serif;font-size:.94em;
+            transition:border-color .25s,box-shadow .25s;outline:none;-webkit-appearance:none;appearance:none
+        }
+        .form-input:focus,.form-textarea:focus,.form-select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(44,95,74,.1)}
+        .form-input::placeholder,.form-textarea::placeholder{color:var(--text-dim);opacity:.6}
+        .form-textarea{resize:vertical;min-height:120px;line-height:1.6}
+        .form-select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%237a756d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:44px}
+        .form-checks{display:flex;flex-direction:column;gap:10px;margin-top:4px}
+        .form-check{display:flex;align-items:center;gap:12px;cursor:pointer;font-size:.92em;color:var(--text);transition:color .2s}
+        .form-check:hover{color:var(--text-bright)}
+        .form-check input[type="checkbox"]{
+            width:20px;height:20px;border:1.5px solid var(--border);border-radius:6px;
+            appearance:none;-webkit-appearance:none;cursor:pointer;flex-shrink:0;
+            background:var(--bg-card);transition:all .2s;position:relative
+        }
+        .form-check input[type="checkbox"]:checked{background:var(--accent);border-color:var(--accent)}
+        .form-check input[type="checkbox"]:checked::after{
+            content:'';position:absolute;top:3px;left:6px;width:5px;height:10px;
+            border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)
+        }
+        .form-check input[type="checkbox"]:focus-visible{box-shadow:0 0 0 3px rgba(44,95,74,.15)}
+        .form-submit{
+            display:inline-flex;align-items:center;justify-content:center;gap:10px;
+            width:100%;padding:16px 34px;margin-top:8px;
+            background:var(--accent);color:#fff;border:none;border-radius:12px;
+            font-family:'Nunito Sans',sans-serif;font-size:1em;font-weight:700;
+            cursor:pointer;transition:all .25s;letter-spacing:.02em
+        }
+        .form-submit:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 8px 28px rgba(44,95,74,.25)}
+        .form-submit:active{transform:translateY(0)}
+        .form-submit i{width:18px;height:18px}
+        .form-note{text-align:center;font-size:.78em;color:var(--text-dim);margin-top:14px}
+
+        /* ── Footer ── */
+        .footer{text-align:center;padding:44px 40px 36px;border-top:1px solid var(--border);color:var(--text-dim)}
+        .footer-mark{display:inline-flex;align-items:center;gap:10px;margin-bottom:16px;color:var(--accent)}
+        .footer-nib{width:16px;height:22px;flex-shrink:0;opacity:.85}
+        .footer-brand-stack{display:flex;flex-direction:column;line-height:1;text-align:left}
+        .footer-brand-name{font-family:'Cormorant Garamond',serif;font-size:1.05em;font-weight:700;color:var(--accent)}
+        .footer-brand-tag{font-size:.54em;text-transform:uppercase;letter-spacing:.2em;font-weight:700;color:var(--gold);margin-top:4px}
+        .footer-copy{font-size:.78em}
+
+        /* ── Responsive ── */
+        @media(max-width:768px){
+            .nav{padding:0 14px;gap:0}
+            .nav-brand{gap:7px}.nav-nib{width:18px;height:24px}
+            .nav-brand-name{font-size:1.05em}.nav-brand-tag{font-size:.88em}
+            .nav a.nl{font-size:.64em;padding:14px 7px;letter-spacing:.03em}
+            .nav .cta-nav{padding:6px 12px;font-size:.64em;margin-left:6px}
+            .hero{padding:120px 20px 80px;min-height:auto}
+            .hero-float{display:none}
+            .hero-deco{display:none}
+            .sec,.sec-alt,.cta-sec{padding:68px 20px}
+            .sec-t{font-size:1.7em}
+            .stats{gap:32px}
+            .stat-num{font-size:2.4em}
+            .testi{padding:30px 26px}
+            .cta-sec h2{font-size:1.8em}
+            .process-step{gap:16px}
+            .process-num{font-size:1.8em;width:32px}
+        }
+
+        @media(prefers-reduced-motion:reduce){
+            .reveal{opacity:1;transform:none;transition:none}
+            .marquee-track{animation:none}
+            .hero-deco{animation:none}
+            .cta-badge{animation:none}
+            *{animation-duration:.01ms!important}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── Nav ── -->
+    <nav class="nav">
+        <a href="#" class="nav-brand" aria-label="Chris Akcali — Scientific Editing and Consulting">
+            <svg class="nav-nib" viewBox="0 0 60 80" fill="none" aria-hidden="true">
+                <line x1="30" y1="6" x2="8" y2="74" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <line x1="30" y1="6" x2="52" y2="74" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <line x1="30" y1="6" x2="30" y2="32" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="30" cy="6" r="2.8" fill="currentColor"/>
+                <circle cx="30" cy="30" r="2" fill="currentColor"/>
+                <path d="M25 22 Q30 27 35 22" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+                <path d="M16 56 Q30 48 44 56" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            </svg>
+            <span class="nav-brand-stack">
+                <span class="nav-brand-name">Chris Akcali</span>
+                <span class="nav-brand-tag">Scientific Editing &amp; Consulting</span>
+            </span>
+        </a>
+        <a href="#services" class="nl">Services</a>
+        <a href="#why" class="nl">Why Me</a>
+        <a href="#about" class="nl">About</a>
+        <a href="#contact" class="cta-nav">Book a Call</a>
+    </nav>
+
+    <!-- ── Hero ── -->
+    <section class="hero">
+        <!-- Decorative botanical elements -->
+        <svg class="hero-deco hero-deco-1" viewBox="0 0 120 120" fill="none"><path d="M60 10 C60 10 20 50 60 110 C100 50 60 10 60 10Z" stroke="currentColor" stroke-width="1" fill="none"/><line x1="60" y1="10" x2="60" y2="110" stroke="currentColor" stroke-width=".8"/><path d="M60 40 C40 35 30 50 45 60" stroke="currentColor" stroke-width=".8" fill="none"/><path d="M60 60 C80 55 90 70 75 80" stroke="currentColor" stroke-width=".8" fill="none"/></svg>
+        <svg class="hero-deco hero-deco-2" viewBox="0 0 120 120" fill="none"><path d="M60 10 C60 10 20 50 60 110 C100 50 60 10 60 10Z" stroke="currentColor" stroke-width="1" fill="none"/><line x1="60" y1="10" x2="60" y2="110" stroke="currentColor" stroke-width=".8"/><path d="M60 45 C35 40 25 58 42 65" stroke="currentColor" stroke-width=".8" fill="none"/><path d="M60 70 C85 65 95 83 78 90" stroke="currentColor" stroke-width=".8" fill="none"/></svg>
+        <svg class="hero-deco hero-deco-3" viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="30" stroke="currentColor" stroke-width=".6"/><circle cx="40" cy="40" r="18" stroke="currentColor" stroke-width=".6"/><circle cx="40" cy="40" r="6" stroke="currentColor" stroke-width=".6"/></svg>
+
+        <div class="hero-trust">
+            <span class="hero-trust-dot"></span>
+            Trusted by researchers across <strong>3,000+ manuscripts</strong>
+        </div>
+
+        <h1>Publish your research<br>with <em>confidence.</em></h1>
+        <p class="hero-sub">Expert guidance and comprehensive support to take the stress out of publishing.</p>
+        <div class="hero-cta-row">
+            <a href="#contact" class="btn-primary"><i data-lucide="calendar"></i> Book a Free Consultation</a>
+            <a href="#process" class="btn-secondary"><i data-lucide="arrow-down"></i> See How It Works</a>
+        </div>
+    </section>
+
+    <!-- ── Intro ── -->
+    <section class="sec">
+        <div class="story reveal">
+            <p>You did the science. You have the data. <strong>Now, you need to turn it into a published paper.</strong></p>
+            <p>But the path to publication is rarely a straight line. Perhaps you are squeezed for time, anticipating harsh reviewer critiques, or struggling to find the right scientific narrative to frame your work.</p>
+            <p>I know what it feels like to be stuck on a project, and I know the immense pressure of a mounting academic to-do list.</p>
+            <p>That is why I built my editing and consulting practice: to streamline the publication pipeline for researchers and ensure your best work gets the attention it deserves.</p>
+        </div>
+    </section>
+
+    <!-- ── Process ── -->
+    <section class="sec-alt" id="process">
+        <div class="wrap">
+            <h2 class="sec-t reveal">Getting started is <em>simple.</em></h2>
+            <p class="sec-st reveal">Every engagement begins the same way — a free conversation.</p>
+            <div class="process reveal">
+                <div class="process-step">
+                    <div class="process-num">1</div>
+                    <div class="process-body">
+                        <h4>Book a free consultation</h4>
+                        <p>Share your project, timeline, and goals. You'll get an honest assessment — no obligation, no pressure.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-num">2</div>
+                    <div class="process-body">
+                        <h4>Get a clear proposal</h4>
+                        <p>You'll receive a simple scope document: what gets done, what you receive, and what it costs.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-num">3</div>
+                    <div class="process-body">
+                        <h4>Your project moves forward</h4>
+                        <p>Work gets delivered on time, with support through submission, peer review, and revision.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Journal marquee ── -->
+    <div class="marquee-label">Where my clients have published</div>
+    <div class="marquee-wrap" aria-hidden="true">
+        <div class="marquee-track">
+            <span>PNAS</span><span class="dot"></span>
+            <span>Science Advances</span><span class="dot"></span>
+            <span>Current Biology</span><span class="dot"></span>
+            <span>Proceedings of the Royal Society B</span><span class="dot"></span>
+            <span>The Plant Cell</span><span class="dot"></span>
+            <span>Journal of Ecology</span><span class="dot"></span>
+            <span>Annual Review of Entomology</span><span class="dot"></span>
+            <span>Oxford University Press</span><span class="dot"></span>
+            <span>Springer Nature</span><span class="dot"></span>
+            <!-- Duplicate for seamless loop -->
+            <span>PNAS</span><span class="dot"></span>
+            <span>Science Advances</span><span class="dot"></span>
+            <span>Current Biology</span><span class="dot"></span>
+            <span>Proceedings of the Royal Society B</span><span class="dot"></span>
+            <span>The Plant Cell</span><span class="dot"></span>
+            <span>Journal of Ecology</span><span class="dot"></span>
+            <span>Annual Review of Entomology</span><span class="dot"></span>
+            <span>Oxford University Press</span><span class="dot"></span>
+            <span>Springer Nature</span><span class="dot"></span>
+        </div>
+    </div>
+
+    <!-- ── Offer: Services ── -->
+    <section class="sec" id="services">
+        <div class="wrap">
+            <h2 class="sec-t reveal">Choose the support <em>that fits your needs.</em></h2>
+            <p class="sec-st reveal">Explore common service packages, designed to meet your needs.</p>
+            <div class="tiers reveal">
+                <div class="tier">
+                    <div class="tier-ic"><i data-lucide="file-pen"></i></div>
+                    <h3>Manuscript Editing</h3>
+                    <p class="tier-focus">Polishing and structurally optimizing your completed drafts for high-impact submission.</p>
+                    <p>A premium, editorial review of your manuscript to make your paper submission-ready.</p>
+                    <div class="tier-divider"></div>
+                    <div class="tier-detail-label">What you get</div>
+                    <ul class="tier-list">
+                        <li><span class="chk"><i data-lucide="check"></i></span><span><strong>Structural &amp; Line Editing</strong><span class="desc">Comprehensive editing for readability, technical phrasing, and flow.</span></span></li>
+                        <li><span class="chk"><i data-lucide="check"></i></span><span><strong>Scientific Feedback</strong><span class="desc">Margin commentary flagging logical gaps and potential criticisms.</span></span></li>
+                        <li><span class="chk"><i data-lucide="check"></i></span><span><strong>Submission Toolkit</strong><span class="desc">Journal compliance check.</span></span></li>
+                    </ul>
+                    <div class="tier-ideal"><strong>Best for:</strong> Researchers who want an expert editor to make their finished draft submission-ready.</div>
+                </div>
+                <div class="tier">
+                    <div class="tier-ic"><i data-lucide="video"></i></div>
+                    <h3>Advisory Sessions</h3>
+                    <p class="tier-focus">Expert feedback to prepare for high-stakes moments.</p>
+                    <p>Bring whatever project you're working on (e.g., presentation) and get transparent, high-level feedback.</p>
+                    <div class="tier-divider"></div>
+                    <div class="tier-detail-label">What you get</div>
+                    <ul class="tier-list">
+                        <li><span class="chk"><i data-lucide="check"></i></span><span><strong>Dedicated Prep Time</strong><span class="desc">Review of your materials before we meet.</span></span></li>
+                        <li><span class="chk"><i data-lucide="check"></i></span><span><strong>60-Minute Video Consultation</strong><span class="desc">Feedback on your narrative, arguments, or deliveries live.</span></span></li>
+                        <li><span class="chk"><i data-lucide="check"></i></span><span><strong>Action Roadmap</strong><span class="desc">Written follow-up with next steps and takeaways.</span></span></li>
+                    </ul>
+                    <div class="tier-ideal"><strong>Best for:</strong> Scientists seeking an objective outside perspective on their project.</div>
+                </div>
+                <div class="tier">
+                    <div class="tier-ic"><i data-lucide="message-circle"></i></div>
+                    <h3>Ongoing Support</h3>
+                    <p class="tier-focus">Advisory partnership as your research program evolves.</p>
+                    <p>An elite editor and publication strategist on call. A direct channel for rapid feedback and keep your projects moving.</p>
+                    <div class="tier-divider"></div>
+                    <div class="tier-detail-label">What you get</div>
+                    <ul class="tier-list">
+                        <li><span class="chk"><i data-lucide="check"></i></span><span><strong>Priority Messaging</strong><span class="desc">Direct contact via email or your preferred method.</span></span></li>
+                        <li><span class="chk"><i data-lucide="check"></i></span><span><strong>Rapid-Turnaround Feedback</strong><span class="desc">Rapid review of your publication materials.</span></span></li>
+                        <li><span class="chk"><i data-lucide="check"></i></span><span><strong>VIP Access</strong><span class="desc">Priority scheduling for advisory sessions and editing.</span></span></li>
+                    </ul>
+                    <div class="tier-ideal"><strong>Best for:</strong> PIs running active labs, postdocs on the job market, or researchers balancing multiple high-priority projects.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Why Me ── -->
+    <section class="sec-alt" id="why">
+        <div class="wrap">
+            <h2 class="sec-t reveal">Why work <em>with me</em></h2>
+            <div class="why-grid reveal">
+                <div class="why-card">
+                    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+                    <h4>3,000+ Manuscripts</h4>
+                    <p>Researchers across the life sciences have trusted me with their most important work.</p>
+                </div>
+                <div class="why-card">
+                    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div>
+                    <h4>PhD Scientist</h4>
+                    <p>An active researcher who can engage with your science at the level it deserves.</p>
+                </div>
+                <div class="why-card">
+                    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+                    <h4>Fast &amp; Flexible</h4>
+                    <p>Tight deadline? Work gets done around your schedule.</p>
+                </div>
+                <div class="why-card">
+                    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+                    <h4>Confidential</h4>
+                    <p>Your unpublished work stays completely private and secure at every stage.</p>
+                </div>
+                <div class="why-card">
+                    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg></div>
+                    <h4>Strategic Thinking</h4>
+                    <p>Guidance on narrative framing and the bigger picture of your research.</p>
+                </div>
+                <div class="why-card">
+                    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg></div>
+                    <h4>One Person, Not a Factory</h4>
+                    <p>You work with me on every project, not a central office and not an AI bot.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Testimonial ── -->
+    <section class="sec">
+        <div class="wrap">
+            <h2 class="sec-t reveal">What clients <em>say</em></h2>
+            <div class="testi-wrap reveal">
+                <div class="testi">
+                    <p class="testi-quote">Chris has been a remarkably accurate and helpful editor, indexer, and proofreader. He helped make our book more readable and at the same time suggested ways to eliminate possible misreadings. Chris has also been phenomenally patient with us and kept a level head during the intense editing periods demanded by the publisher.</p>
+                    <div class="testi-attr">
+                        <div class="testi-avatar">SG</div>
+                        <div>
+                            <div class="testi-name">Scott F. Gilbert</div>
+                            <div class="testi-role">Swarthmore College &middot; <em>Eco-Evo-Devo</em></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── About ── -->
+    <section class="sec-alt" id="about">
+        <div class="wrap">
+            <div class="about reveal">
+                <div class="about-portrait">
+                    <div class="placeholder">Photo</div>
+                </div>
+                <div>
+                    <div class="role">About me</div>
+                    <h3>Chris Akcali, <em>PhD</em></h3>
+                    <p>I'm a scientific editor, consultant, and scientist. I started editing and consulting full-time after finishing a postdoctoral fellowship and realizing how much I enjoy helping researchers through the publishing process.</p>
+                    <p>When I'm not helping scientists publish their research, I spend most of my time doing science as an Adjunct Researcher at the North Carolina Museum of Natural Sciences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FAQ ── -->
+    <section class="sec">
+        <div class="wrap">
+            <h2 class="sec-t reveal">Frequently asked <em>questions</em></h2>
+            <div class="faq-list reveal">
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">
+                        How much do your services cost?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-a"><div class="faq-a-inner">Because every research project has distinct requirements, pricing is tailored to the specific scope, complexity, and timeline of your work. Following our initial free consultation, I will provide a clear, flat-fee proposal with no hidden costs. I am highly familiar with academic constraints and always make an honest effort to structure proposals that respect your project needs.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">
+                        How quickly can you return my edited manuscript?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-a"><div class="faq-a-inner">Turnaround times depend on the length and needs of your project, but I work flexibly to accommodate tight submission windows. For standard manuscripts under 10,000 words, documents are generally returned within 3 business days. We will agree on a delivery date before any work begins.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">
+                        Do you accept university or institutional funds?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-a"><div class="faq-a-inner">Yes. I routinely work with university purchasing departments and can accommodate institutional funding, grant accounts, and standard invoice processing pipelines. If your department requires specific vendor onboarding or documentation, we can coordinate that during the proposal stage.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">
+                        Can you review my manuscript a second time after I make revisions?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-a"><div class="faq-a-inner">Absolutely. Scientific writing is an iterative process. Re-reviewing a manuscript after you have integrated feedback or addressed specific reviewer critiques is a common component of my practice. We can easily incorporate a second-pass review directly into your initial project scope.</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CTA / Contact ── -->
+    <section class="cta-sec" id="contact">
+        <div class="reveal">
+            <h2>Ready to <em>start a conversation?</em></h2>
+            <p class="cta-lede">Tell me a little about your project and I'll get back to you within one business day.</p>
+
+            <div class="form-wrap" style="margin-top:48px;text-align:left">
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="fname">First name</label>
+                            <input class="form-input" type="text" id="fname" name="first_name" placeholder="Your first name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="lname">Last name</label>
+                            <input class="form-input" type="text" id="lname" name="last_name" placeholder="Your last name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email</label>
+                        <input class="form-input" type="email" id="email" name="email" placeholder="you@university.edu" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="referral">How did you hear about my services?</label>
+                        <input class="form-input" type="text" id="referral" name="referral" placeholder="e.g. colleague, search, social media">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">What kind of support are you looking for?</label>
+                        <div class="form-checks">
+                            <label class="form-check">
+                                <input type="checkbox" name="support[]" value="Manuscript Editing">
+                                Manuscript Editing
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="support[]" value="Dissertation or Thesis">
+                                Dissertation or Thesis
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="support[]" value="Book or Book Chapter">
+                                Book or Book Chapter
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="support[]" value="Indexing">
+                                Indexing
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="support[]" value="Advisory Session">
+                                Advisory Session (presentation, job talk, interview prep, etc.)
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="support[]" value="Ongoing Support">
+                                Ongoing Support (retainer)
+                            </label>
+                            <label class="form-check">
+                                <input type="checkbox" name="support[]" value="Other">
+                                Other / Not sure yet
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="message">Tell me about your project</label>
+                        <textarea class="form-textarea" id="message" name="message" placeholder="What are you working on? What's your timeline? Anything else I should know?"></textarea>
+                    </div>
+                    <button type="submit" class="form-submit"><i data-lucide="send"></i> Send Message</button>
+                    <p class="form-note">You'll hear back within one business day. No spam, no mailing list — just a reply.</p>
+                </form>
+            </div>
+
+            <div class="contact-row" style="margin-top:48px">
+                <a href="mailto:chrisakcali@yahoo.com" class="contact-chip">
+                    <i data-lucide="mail"></i><span class="lbl">Email</span>chrisakcali@yahoo.com
+                </a>
+                <a href="https://www.linkedin.com/in/chris-akcali-ph-d-201676310/" target="_blank" rel="noopener" class="contact-chip">
+                    <i data-lucide="linkedin"></i><span class="lbl">LinkedIn</span>Chris Akcali, PhD
+                </a>
+                <span class="contact-chip" style="cursor:default">
+                    <i data-lucide="message-circle"></i><span class="lbl">WhatsApp</span>Available on request
+                </span>
+                <span class="contact-chip" style="cursor:default">
+                    <i data-lucide="qr-code"></i><span class="lbl">WeChat</span>Available on request
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-mark">
+            <svg class="footer-nib" viewBox="0 0 60 80" fill="none" aria-hidden="true">
+                <line x1="30" y1="6" x2="8" y2="74" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <line x1="30" y1="6" x2="52" y2="74" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <line x1="30" y1="6" x2="30" y2="32" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="30" cy="6" r="2.8" fill="currentColor"/>
+                <circle cx="30" cy="30" r="2" fill="currentColor"/>
+                <path d="M25 22 Q30 27 35 22" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+                <path d="M16 56 Q30 48 44 56" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            </svg>
+            <div class="footer-brand-stack">
+                <span class="footer-brand-name">Chris Akcali</span>
+                <span class="footer-brand-tag">Scientific Editing &amp; Consulting</span>
+            </div>
+        </div>
+        <div class="footer-copy">&copy; 2026 Chris Akcali. All rights reserved.</div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        // Scroll reveal
+        const obs = new IntersectionObserver((entries)=>{
+            entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})
+        },{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+        document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+        // FAQ accordion
+        document.querySelectorAll('.faq-q').forEach(btn=>{
+            btn.addEventListener('click',()=>{
+                const item=btn.parentElement;
+                const isOpen=item.classList.contains('open');
+                document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+                if(!isOpen) item.classList.add('open');
+                btn.setAttribute('aria-expanded',!isOpen);
+            });
+        });
+    </script>
+</body>
+</html>
